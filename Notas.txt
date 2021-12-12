@@ -61,5 +61,17 @@ configurar scripts de desarrollo y producción en el package.json
 Convierte el proyecto en un repositorio de git
 git init //:::::
 
+Crear el archivo que excluye lo que no se va a subir
+.gitignore 
+    node_modules
+    variables.env
+    .DS_Store
+
+Agregar todos los archivos que han registrado un cambio:
+git add .
+
+
+
+
 Eliminado del archivo bootstrap
 /*# sourceMappingURL=bootstrap.min.css.map */
