@@ -1,0 +1,4 @@
+cd desktop/proyectos/jsmodernonode/agenciaviajes
+npm run dev
+Después de cargar el servidor:
+http://localhost:4000/

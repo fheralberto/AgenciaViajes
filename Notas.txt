@@ -1,0 +1,65 @@
+cd desktop/proyectos/jsmodernonode/agenciaviajes
+
+Todos los proyectos de node comienzan creando el package.json:
+npm init
+
+Para tener todas las dependencias del proyecto 
+y configurar los scripts
+
+La dependencia express será la plataforma para crear el proyecto.
+Se instalará como dependencia de producción,
+en decir, 
+que se requiere en el servidor donde se va a publicar el proyecto:
+npm install express //:::::
+
+Esto crea un archivo package-lock.json que nunca se modifica
+y la carpeta node_modules que es donde se instalan todas la dependencias
+
+Instalar nodemon como dependencia de desarollo:
+npm install --save-dev nodemon //:::::
+
+Detecta cambios en los archivos y reinicia el servidor automáticamente
+
+Crear el archivo index.js, en este archivo se configura express
+
+configurar el script nodemon:
+  "dev" : "nodemon index.js" y
+  "type": "module",
+
+En la terminal se ejecuta como 
+npm run dev //:::::
+
+Vistas con template engines o motores de plantilla:
+  Pueden ser con Angular, React o Vue
+Los más comunes en Node - Exress:
+  EJS - Embedded JavasScript
+  HBS - Handlebars.js (mustache.js)
+  React - Muy similar a React.js
+  Pug (antes Jade) - Se usará en este proyecto
+
+Instalar pug como dependencia de producción:
+npm install pug //:::::
+
+Pug tiene su propia sintaxis de html,
+Se puede convertir el código html a pug con:
+https://html-to-pug.com/
+
+Dependencia para conectar al SQL y hacer consultas
+En modo producción
+1.- sequelize: Es un ORM
+npm install mysql2 sequelize //::::
+
+Documentación para querys:
+https://sequelize.org/master/manual/model-querying-basics.html
+
+Preparando el deployment:
+Para crear variables de entorno para desarollo local y para el host
+npm install --save-dev dotenv //:::::
+
+configurar scripts de desarrollo y producción en el package.json
+
+Convierte el proyecto en un repositorio de git
+git init //:::::
+
+Eliminado del archivo bootstrap
+/*# sourceMappingURL=bootstrap.min.css.map */
