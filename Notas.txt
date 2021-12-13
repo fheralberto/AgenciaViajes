@@ -67,10 +67,24 @@ Crear el archivo que excluye lo que no se va a subir
     variables.env
     .DS_Store
 
-Agregar todos los archivos que han registrado un cambio:
-git add .
+Prepara todos los archivos que han registrado un cambio:
+  git add .
+Agrega mensaje del commit y los guarda los archivos como parte del commit
+  git commit -m "mensaje del commit"
+Indica en donde se van a subir los cambios (No probado)
+  git remote add origin https://github.com/fheralberto/agenciaviajes.git
+Sube los archivos a github:
+  git push -u origin master
 
+Instalar heroku cli
+Probar si está instalado, escribir en terminal:
+  heroku
 
+Crear nueva app en heroku:
+  heroku create --remote production
+
+Cambia el repositorio de git al de heroku y sube el repositorio heroku
+git push production master 
 
 
 Eliminado del archivo bootstrap
