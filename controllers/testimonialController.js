@@ -1,7 +1,7 @@
 import { Testimonial } from '../models/Testimonial.js'
 
 const guardarTestimonial = async (req, res) => {
-  // console.log(req.body)
+  // console.log(req.body) 
   // Valida formulario
   const { nombre, correo, mensaje } = req.body
   const errores = [];
@@ -16,6 +16,7 @@ const guardarTestimonial = async (req, res) => {
   }
   // console.log(errores);
   if (errores.length > 0) {
+    
     // Consulta testimoniales existentes
     const testimoniales = await Testimonial.findAll();
     // Mostrar la vista con errores
@@ -23,7 +24,7 @@ const guardarTestimonial = async (req, res) => {
       pagina: 'Testimoniales',
       errores,
       nombre,
-      correo,
+      correo, 
       mensaje,
       testimoniales
     })
