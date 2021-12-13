@@ -54,7 +54,7 @@ https://sequelize.org/master/manual/model-querying-basics.html
 
 Preparando el deployment:
 Para crear variables de entorno para desarollo local y para el host
-npm install --save-dev dotenv //:::::
+npm install --save dotenv //:::::
 
 configurar scripts de desarrollo y producción en el package.json
 
@@ -85,6 +85,47 @@ Crear nueva app en heroku:
 
 Cambia el repositorio de git al de heroku y sube el repositorio heroku
 git push production master 
+
+Habilitar las bases de datos en la página de heroku:
+  En Resources/Add-ons buscar: 
+  ClearDB MySQL //:::: Debe estar registrada una tarjeta válida en heroku
+  Esto agrega la base de datos al proyecto creado
+
+Obtener credenciales para pasaralas como variables de entorno de heroku
+  En Settings, dar click a "Reveal Config Vars"
+
+Variables de configuración de heroku:
+// Url de la base de datos de "ClearDB MySQL"
+CLEARDB_DATABASE_URL
+// usuario:password@hosting.net/nombreDeLaBaseDeDatos?reconnect=true
+mysql://b800765049d214:6af7da98@us-cdbr-east-05.cleardb.net/heroku_7e4d5595412399a?reconnect=true
+
+Migrar la base de datos:
+  Exporta toda la base de datos completa a un archivo agenciaviajes.sql
+    En terminal:
+      mysqldump -u root -p agenciaviajes > agenciaviajes.sql //:::::
+        Enter password: root 
+    Esto crea el archivo agenciaviajes.sql en el proyecto
+  Para subir la base de datos al servidor:
+    Para Obtener las variables de entorno de heroku, en terminal:
+      heroku config | grep CLEARDB_DATABASE_URL //:::::
+  Importa agenciaviajes.sql a heroku, en terminal:
+    mysql -usuario -hosting -password < agenciaviajes.sql
+      mysql -u b800765049d214 -h us-cdbr-east-05.cleardb.net -p heroku_7e4d5595412399a < agenciaviajes.sql //:::::
+        Enter password: 6af7da98
+
+Configuración de las variables del proyecto para el servidor:
+  En terminal:
+    heroku config:set BD_nombre=heroku_7e4d5595412399a //:::::
+  Las variables creadas se pueden ver en Settings/Reveal Config Vars
+    Ahí mismo se pueden seguir agregando...
+
+Para subir los cambios realizados al deployment:
+  git add .
+  git commit -m "Cambio dotenv de desarrollo a global"
+  git push -u origin master
+
+
 
 
 Eliminado del archivo bootstrap
