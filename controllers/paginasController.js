@@ -23,7 +23,7 @@ const paginaInicio = async (req, res) => {
       testimoniales: resultado[1]
     })
   } catch (error) {
-    console.log(error)
+    console.log('Error en página inicio', error)
   }
 }
 const paginaNosotros = (req, res) => {
@@ -32,13 +32,17 @@ const paginaNosotros = (req, res) => {
   });
 }
 const paginaViajes = async (req, res) => {
-  // Consulta BD
-  const viajes = await Viaje.findAll();
-  // console.log(viajes);
-  res.render('viajes', {
-    pagina: 'Próximos viajes',
-    viajes
-  });
+  try{
+    // Consulta BD
+    const viajes = await Viaje.findAll();
+    // console.log(viajes);
+    res.render('viajes', {
+      pagina: 'Próximos viajes',
+      viajes
+    });
+  } catch(error){
+    console.log('Error en página Nosotros', error);
+  }
 }
 const paginaTestimoniales = async (req, res) => {
   try {
@@ -53,16 +57,16 @@ const paginaTestimoniales = async (req, res) => {
   }
 }
 const paginaDetalleViaje = async (req, res) => {
-  // console.log(req.params.viaje);
-  const { slug } = req.params
   try {
+    // console.log(req.params.viaje);
+    const { slug } = req.params
     const viaje = await Viaje.findOne({ where: { slug } });
     res.render('viaje', {
       pagina: 'Información viaje',
       viaje
     })
   } catch (error) {
-    console.log(error)
+    console.log('Error en detalle de Viaje', error)
   }
 }
 export {

@@ -130,7 +130,7 @@ git push production master //:::::
 
 Ver errores de heroku
   heroku logs --source app --tail
-
+  heroku logs --tail
 
 Eliminado del archivo bootstrap
 /*# sourceMappingURL=bootstrap.min.css.map */

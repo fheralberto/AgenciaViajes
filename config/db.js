@@ -1,6 +1,8 @@
 import Sequelize from "sequelize";
 import dotenv from 'dotenv'
+
 dotenv.config({ path: 'variables.env' });
+
 // No funcionó el require del curso
 // require('dotenv').config({ path: 'variables.env' })
 
