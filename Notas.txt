@@ -128,6 +128,9 @@ Para subir los cambios realizados al deployment:
 Cambia el repositorio de git al de heroku y sube el repositorio heroku:
 git push production master //:::::
 
+Ver errores de heroku
+  heroku logs --source app --tail
+
 
 Eliminado del archivo bootstrap
 /*# sourceMappingURL=bootstrap.min.css.map */
