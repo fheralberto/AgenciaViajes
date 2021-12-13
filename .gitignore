@@ -6,3 +6,6 @@ node_modules
 
 # Ignora todos los archivos de texto
 *.txt
+
+# Ignora las variables de desarrollo
+variables.env
