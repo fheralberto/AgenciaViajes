@@ -83,8 +83,8 @@ Probar si está instalado, escribir en terminal:
 Crear nueva app en heroku:
   heroku create --remote production
 
-Cambia el repositorio de git al de heroku y sube el repositorio heroku
-git push production master 
+Cambia el repositorio de git al de heroku y sube el repositorio heroku:
+git push production master //:::::
 
 Habilitar las bases de datos en la página de heroku:
   En Resources/Add-ons buscar: 
@@ -125,7 +125,8 @@ Para subir los cambios realizados al deployment:
   git commit -m "Cambio dotenv de desarrollo a global"
   git push -u origin master
 
-
+Cambia el repositorio de git al de heroku y sube el repositorio heroku:
+git push production master //:::::
 
 
 Eliminado del archivo bootstrap
