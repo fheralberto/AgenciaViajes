@@ -126,7 +126,7 @@ Para subir los cambios realizados al deployment:
   git push -u origin master
 
 Cambia el repositorio de git al de heroku y sube el repositorio heroku:
-git push production master //:::::
+  git push production master //:::::
 
 Ver errores de heroku
   heroku logs --source app --tail
